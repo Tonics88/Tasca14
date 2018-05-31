@@ -10,7 +10,7 @@ function NouCurs() {
 }
 
 //Funció per retornar la data actual.
-function dataActual(){
+function dataActual(srt){
     var data = new Date();
     var dd = data.getDate();
     var mm = data.getMonth()+1; //Gener es 0!
@@ -26,11 +26,17 @@ function dataActual(){
     if(mn<10) mn = '0'+mn;
     if(ss<10) ss = '0'+ss;
     
-    return (dd+'/'+mm+'/'+yyyy+" "+hh+":"+mn+":"+ss);
+    if (srt='default') return (yyyy+'-'+mm+'-'+dd);
+    else return (dd+'/'+mm+'/'+yyyy+" "+hh+":"+mn+":"+ss);
 }
 
 $(document).ready(function() {
+    // Per seguretat s'actualitza l'atribut "min" dels elements "input" de dates amb la data d'avui.
+    $("#inici").attr("min",dataActual('default'));
+    $("#fi").attr("min",dataActual('default'));
+
     $("form").submit(function(event){
+
         // Cream un objecte 'empleat' amb totes les dades necessaries.
         curs = new NouCurs();
         curs.dies = (new Date(curs.fi)-new Date(curs.inici))/(1000 * 60 * 60 * 24);

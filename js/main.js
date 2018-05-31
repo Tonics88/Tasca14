@@ -6,7 +6,7 @@ function NouCurs() {
     this.inici = $('#inici').val();
     this.fi = $('#fi').val();
     this.hores = $('#hores').val();
-    this.dies = moment(curs.fi).diff(moment(curs.inici), 'days');
+    this.dies = "";
 }
 
 //Funció per retornar la data actual.
@@ -33,6 +33,7 @@ $(document).ready(function() {
     $("form").submit(function(event){
         // Cream un objecte 'empleat' amb totes les dades necessaries.
         curs = new NouCurs();
+        curs.dies = (new Date(curs.fi)-new Date(curs.inici))/(1000 * 60 * 60 * 24);
         console.log(curs);
         
         // Nom del curs i tipus
@@ -40,7 +41,7 @@ $(document).ready(function() {
         // Nom del professor
         $("#docent").text("Sr/Sra "+curs.professor);
         // Data inicial i dies fins a la data final (data final - data inicial)
-        $("#dates").text(curs.inici.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')+" fins "+moment(curs.fi).diff(moment(curs.inici), 'days')+" després.");
+        $("#dates").text(curs.inici.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')+" fins "+curs.dies+" després.");
         // Data inicial i dies fins a la data final (data final - data inicial)
         $("#durada").text(curs.hores+" hores.");
         //Per finalitzar es mostra la data quan es va afegir el curs.

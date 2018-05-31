@@ -1,3 +1,133 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tasca 14 - Mostrar informació d'un curs</title>
+	<!-- Llibreries de bootstrap afegides directament d'internet-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!-- Llibreries de jQuery afegides directament d'internet-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body style="background-color:silver">
+	
+	<!-- Formulari -->
+	<div class="container">
+		<br>
+		<!-- Dividim la pantalla en dos div, una mostrarà el resultat en temps real i l'altre per entrar les dades -->
+		<div class="card-deck">
+			<!-- Div on mostram els resultats en temps real -->
+			<div class="card" id="resposta">
+				<div class="card-body">
+					<h2 class="card-title col align-self-start">Mostrar informació d'un curs</h2>
+					<br>
+					<p class="cardtext"><h5>Nom del curs i tipus:</h5></p>
+					<h2><div id="curs" style="text-align:center">&nbsp</div></h2>
+					<p class="cardtext"><h5>Nom del professor:</h5></p>
+					<h2><div id="docent" style="text-align:center">&nbsp</div></h2>
+					<p class="cardtext"><h5>Data inicial i dies fins a la data final:</h5></p>
+					<h2><div id="dates" style="text-align:center">&nbsp</div></h2>
+					<p class="cardtext"><h5>Hores:</h5></p>
+					<h2><div id="durada" style="text-align:center">&nbsp</div></h2>
+				</div>
+				<div class="col-md-10 offset-md-1">
+					<button type="button" class="btn btn-outline-danger btn-block" id="btn2">
+						Afegir un altre curs
+					</button>
+				</div>
+				<img class="card-img-bottom" src="img/curs1.jpg" alt="Tasca 14 - Curs">
+				<div class="card-footer">
+					<small class="text-muted" id="afegit">Cap curs afegit</small>
+				</div>
+			</div>
+			<!-- Div on introduïm totes les dades -->
+			<div class="card" id="form">			
+				<div class="card-body">
+					<h1>Tasca 14</h1>
+					<br>
+					<p class="card-text">
+						<form action="#" onsubmit="return false">
+							<div class="form-group">
+								<label for="nom">Nom del curs:</label>
+								<input	type="text" 
+								class="form-control" 
+								id="nom" 
+								placeholder="Escriu el nom del curs" 
+								name="nom"
+								required>
+							</div>
+							<div class="form-group">
+								<label for="tipus">Tipus de curs:</label>
+								<input	type="text" 
+								class="form-control" 
+								id="tipus" 
+								placeholder="Escriu el tipus del curs" 
+								name="tipus"
+								required>
+							</div>
+							<div class="form-group">
+								<label for="professor">Professor:</label>
+								<input	type="professor" 
+								class="form-control" 
+								id="professor" 
+								placeholder="Escriu el nom del professor" 
+								name="professor"
+								required>
+							</div>
+							<div class="form-group">
+								<label for="inici">Data d'inici':</label>
+								<input	type="date" 
+								class="form-control" 
+								id="inici" 
+								name="inici" 
+								min="2018-05-31" 
+								value=""
+								required>
+							</div>
+							<div class="form-group">
+								<label for="fi">Data de fi:</label>
+								<input	type="date" 
+								class="form-control" 
+								id="fi" 
+								name="fi" 
+								min="2018-05-31" 
+								value=""
+								required>
+								<small class="form-text text-muted" id="salari_text">Ha de ser major a la data d'inici.</small>
+							</div>
+							<div class="form-group">
+								<label for="hores">Hores:</label>
+								<input type="number" 
+								class="form-control" 
+								id="hores" 
+								placeholder="Introdueix el nombre d'hores" 
+								name="hores" 
+								min="0" 
+								max="1000"
+								step="1"
+								required>
+								<small class="form-text text-muted" id="salari_text">Ha de ser major que 0 i menor que 1000.</small>
+							</div>
+							<br>
+							<div class="form-group">
+								<button type="submit" class="btn btn-secondary btn-block" id="btn">Afegir</button>
+							</div>
+						</form>
+					</p>
+				</div>
+				<!-- Pagina web creada per en Toni Caballero Salas -->
+				<div class="card-footer">
+					<small class="text-muted">&nbsp&copy&nbspToni Caballero Salas</small>
+				</div>
+			</div>	
+			
+		</div>
+		
+	</div>
+</body>
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,4 +251,5 @@
 		
 	</div>
 </body>
+>>>>>>> caab79301ad2499c48dfb06337d41d653fdcfa0b
 </html>

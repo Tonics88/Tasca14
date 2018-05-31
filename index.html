@@ -5,8 +5,10 @@
 	<title>Tasca 14 - Mostrar informació d'un curs</title>
 	<!-- Llibreries de bootstrap afegides directament d'internet-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<!-- Llibreries de jQuery afegides directament d'internet-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="http://momentjs.com/downloads/moment.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body style="background-color:silver">
@@ -17,7 +19,7 @@
 		<!-- Dividim la pantalla en dos div, una mostrarà el resultat en temps real i l'altre per entrar les dades -->
 		<div class="card-deck">
 			<!-- Div on mostram els resultats en temps real -->
-			<div class="card">
+			<div class="card" id="resposta">
 				<div class="card-body">
 					<h2 class="card-title">Mostrar informació d'un curs</h2>
 					<br>
@@ -36,7 +38,7 @@
 				</div>
 			</div>
 			<!-- Div on introduïm totes les dades -->
-			<div class="card">			
+			<div class="card" id="form">			
 				<div class="card-body">
 					<h1>Tasca 14</h1>
 					<br>
@@ -105,7 +107,7 @@
 							</div>
 							<br>
 							<div class="form-group">
-								<button type="submit" class="btn btn-secondary btn-block" id="btn">Calcular</button>
+								<button type="submit" class="btn btn-secondary btn-block" id="btn">Afegir</button>
 							</div>
 						</form>
 					</p>

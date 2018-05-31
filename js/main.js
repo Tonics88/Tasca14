@@ -6,51 +6,7 @@ function NouCurs() {
     this.inici = $('#inici').val();
     this.fi = $('#fi').val();
     this.hores = $('#hores').val();
-    this.dies = calcularDias(this.inici, this.fi);
-    // this.net = this.salari - (this.salari*this.irpf/100)
-}
-// https://www.lawebdelprogramador.com/codigo/JavaScript/2718-Obtener-la-diferencia-en-dias-entre-dos-fechas.html
-function calcularDias(inici, fi) {
-    var fechaInicial=inici;
-    var fechaFinal=fi
-    var resultado="";
-    
-    inicial=fechaInicial.split("/");
-    final=fechaFinal.split("/");
-    // obtenemos las fechas en milisegundos
-    var dateStart=new Date(inicial[2],(inicial[1]-1),inicial[0]);
-    console.log(dateStart);
-    var dateEnd=new Date(final[0],(final[1]-1),final[2]);
-    console.log(dateEnd);
-    if(dateStart<dateEnd)
-    {
-        // la diferencia entre las dos fechas, la dividimos entre 86400 segundos
-        // que tiene un dia, y posteriormente entre 1000 ya que estamos
-        // trabajando con milisegundos.
-        resultado="La diferencia es de "+(((dateEnd-dateStart)/86400)/1000)+" días";
-    }else{
-        resultado="La fecha inicial es posterior a la fecha final";
-    }
-    console.log(resultado);
-}
-
-// Funció per calcular l'edat actual de l'empleat.
-function calcularEdat(val){
-    var any = parseInt(val.substr(0, 4));
-    var mes = parseInt(val.substr(5,2));
-    var dia = parseInt(val.substr(8));
-    
-    avui = new Date();
-    any_ac = avui.getYear();
-    mes_ac = avui.getMonth();
-    dia_ac = avui.getDate();
-    edat = (any_ac + 1900) - any;
-    
-    if ( mes_ac < (mes - 1)) edat--;
-    if (((mes - 1) == mes_ac) && (dia_ac < dia)) edat--;
-    if (edat > 1900) edat -= 1900;
-    
-    return edat;
+    this.dies = moment(curs.fi).diff(moment(curs.inici), 'days');
 }
 
 //Funció per retornar la data actual.
@@ -84,7 +40,7 @@ $(document).ready(function() {
         // Nom del professor
         $("#docent").text("Sr/Sra "+curs.professor);
         // Data inicial i dies fins a la data final (data final - data inicial)
-        $("#dates").text(curs.inici+" durant "+curs.dies+" dies.");
+        $("#dates").text(curs.inici.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')+" fins "+moment(curs.fi).diff(moment(curs.inici), 'days')+" després.");
         // Data inicial i dies fins a la data final (data final - data inicial)
         $("#durada").text(curs.hores+" hores.");
         //Per finalitzar es mostra la data quan es va afegir el curs.

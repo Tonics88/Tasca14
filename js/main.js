@@ -82,11 +82,11 @@ $(document).ready(function() {
         // Nom del curs i tipus
         $("#curs").text(curs.nom+" ["+curs.tipus+"]");
         // Nom del professor
-        $("#professor").text("Sr/Sra "+curs.professor);
+        $("#docent").text("Sr/Sra "+curs.professor);
         // Data inicial i dies fins a la data final (data final - data inicial)
         $("#dates").text(curs.inici+" durant "+curs.dies+" dies.");
         // Data inicial i dies fins a la data final (data final - data inicial)
-        $("#hores").text(curs.hores+" hores.");
+        $("#durada").text(curs.hores+" hores.");
         //Per finalitzar es mostra la data quan es va afegir el curs.
         $("#afegit").text("Curs afegit: "+dataActual());
         

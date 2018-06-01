@@ -27,7 +27,7 @@ function dataActual(srt){
     if(ss<10) ss = '0'+ss;
     
     // Afegida l'opció de tenir dos formats de dates per diferents necessitats.
-    if (srt='default') return (yyyy+'-'+mm+'-'+dd);
+    if (srt=='default') return (yyyy+'-'+mm+'-'+dd);
     else return (dd+'/'+mm+'/'+yyyy+" "+hh+":"+mn+":"+ss);
 }
 
@@ -48,9 +48,9 @@ $(document).ready(function() {
         // Nom del professor
         $("#docent").text("Sr/Sra "+curs.professor);
         // Data inicial i dies fins a la data final (data final - data inicial)
-        $("#dates").text(curs.inici.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')+" fins "+curs.dies+" després.");
+        $("#dates").text("Comença el "+curs.inici.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')+" fins "+curs.dies+" després.");
         // Data inicial i dies fins a la data final (data final - data inicial)
-        $("#durada").text(curs.hores+" hores.");
+        $("#durada").text("Duració total de "+curs.hores+" hores.");
         //Per finalitzar es mostra la data quan es va afegir el curs.
         $("#afegit").text("Curs afegit: "+dataActual());
         
